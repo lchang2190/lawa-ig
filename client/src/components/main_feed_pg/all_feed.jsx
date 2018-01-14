@@ -21,6 +21,7 @@ class AllFeeds extends React.Component {
 	updateFeed(userId) {
 		axios.post('/feed', {userId})
 			.then((response) => {
+				console.log(response);
 				this.setState({
 					userFeeds: response.data
 				})
