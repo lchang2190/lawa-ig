@@ -58,7 +58,7 @@ module.exports = {
   },
 
   feed: function(req, res) {
-    db.getAllPosts(3) //CURRENTLY HARD CODED USER ID, change to req.body
+    db.getAllPosts(req.body.userId) //CURRENTLY HARD CODED USER ID, change to req.body
       .then((results) => {
         let posts = results.rows;
         db.getPostsLiked(1)

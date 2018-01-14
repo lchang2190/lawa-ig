@@ -98,7 +98,7 @@ class PicModal extends React.Component {
     fetch('/like', postConfig);
     this.liveUpdateLike();
     this.setState({liked: !this.state.liked});
-
+  
   }
 
   render() {

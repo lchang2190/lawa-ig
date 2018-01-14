@@ -355,5 +355,12 @@ semantic.min.css:19
   font-weight: bold;
 }
 
+.userComment {
+  float: left;
+  font-weight: bold;
+}
+.userText {
+  float: left;
+}
 semantic.min.css:19
 
