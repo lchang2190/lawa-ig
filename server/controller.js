@@ -247,7 +247,6 @@ module.exports = {
     },
 
     getUserInfo: function(req, res) {
-      console.log('reqfdfds', req.body);
       db.getUserProfile(req.body.userId)
         .then(results => {
           res.json(results.rows[0]);

@@ -44,7 +44,7 @@ class AllFeeds extends React.Component {
 				})
 			})
 			.catch((error) => {
-				console.log('axios get errorfgfd', error)
+				console.log('axios get error', error)
 			})
 	}
 
