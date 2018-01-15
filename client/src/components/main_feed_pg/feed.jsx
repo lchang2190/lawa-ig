@@ -146,7 +146,6 @@ class OneFeed extends React.Component {
       this.setState({newComment: ''});
       this.nameInput.value = '';      
     }
-    console.log('loading.');
     this.loadComments(this.props.post)
   }
 
