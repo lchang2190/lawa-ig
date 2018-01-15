@@ -203,7 +203,6 @@ class OneFeed extends React.Component {
 			  </div>
 			  <div className="extra content">
 			    <div className="ui large transparent left icon input">
-			      <i className="heart outline icon"></i>
 			      <input className="textField" ref={input => this.nameInput = input }  type="text" placeholder="Add Comment..." onChange={e => this.onCommentType(e)} onKeyPress={e => this.handleKeyPress(e)}></input>
 			    </div>
 			  </div>

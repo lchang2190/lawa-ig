@@ -433,5 +433,17 @@ semantic.min.css:19
   float: left;
 }
 
+.textField{
+  text-align: left;
+  float: left;
+}
 
+.ui.card > .extra, .ui.cards > .card > .extra {
+    text-align: left;
+}
+
+.ui.transparent[class*="left icon"].input>input {
+    padding-left: 0!important;
+    padding-right: 0!important;
+}
 
