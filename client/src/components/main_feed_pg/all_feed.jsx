@@ -9,19 +9,19 @@ class AllFeeds extends React.Component {
 		super(props);
 		this.state = {
 			loggedInUser: this.props.user,
-			userFeeds: []
+			userFeeds: [],
+			userInfo: ''
 		}
 	}
 
 	componentDidMount() {
-		console.log('data', this.props.user.user_id);
 		this.updateFeed(this.props.user.user_id);
+		this.getUserInfo(this.props.user.user_id);
 	}
 
 	updateFeed(userId) {
 		axios.post('/feed', {userId})
 			.then((response) => {
-				console.log(response);
 				this.setState({
 					userFeeds: response.data
 				})
@@ -31,11 +31,24 @@ class AllFeeds extends React.Component {
 			})
 	}
 
+	getUserInfo(userId) {
+		axios.post('/user', {userId})
+			.then((response) => {
+				this.setState({
+					userInfo: response.data,
+				})
+				console.log('userinfo', this.state.userInfo);
+			})
+			.catch((error) => {
+				console.log('axios get errorfgfd', error)
+			})
+	}
+
 	render() {
 		return (
 			<div>
 				<div className="feedBar">
-					<FeedBar loggedInUser={this.state.loggedInUser} />
+					<FeedBar loggedInUser={this.state.userInfo} />
 				</div>
 				<div className="all-feeds">
 					<FeedGrid loggedInUser={this.state.loggedInUser} userFeeds={this.state.userFeeds} />

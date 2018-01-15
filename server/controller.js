@@ -285,5 +285,16 @@ module.exports = {
         .then(() => {
           res.sendStatus(201);
         });
+    },
+
+    getUserInfo: function(req, res) {
+      console.log('reqfdfds', req.body);
+      db.getUserProfile(req.body.userId)
+        .then(results => {
+          res.json(results.rows[0]);
+        })
+        .catch(error => {
+          console.log(error);
+        })
     }
 };

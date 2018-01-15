@@ -30,7 +30,7 @@ const getAllPosts = function (userId) {
   return pool.query('SELECT users.prof_pic, users.name, posts.post_id, posts.img, posts.like_count, posts.user_id, posts.caption, posts.created_at FROM posts \
   INNER JOIN followers ON followers.following_user = $1 AND \
     followers.followed_user = posts.user_id \
-    INNER JOIN users ON posts.user_id = users.user_id', [userId]);
+    INNER JOIN users ON posts.user_id = users.user_id ORDER BY posts.created_at DESC', [userId]);
 };
 
 const getPostsLiked = function (userId, postsIdArray) {
@@ -71,6 +71,7 @@ const checkForFbId = function (id) {
 };
 
 const getUserProfile = function (userId) {
+  console.log('ho');
   return pool.query('SELECT users.user_id, users.name, users.prof_pic, users.description FROM users \
     WHERE users.user_id = $1',
     [userId]);

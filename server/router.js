@@ -21,5 +21,6 @@ router.post('/description', controller.updateDescription);
 router.post('/logon', controller.feed);
 router.post('/id', controller.switchUser);
 router.post('/signUp', controller.signUp);
+router.post('/user', controller.getUserInfo);
 
 module.exports = router;
