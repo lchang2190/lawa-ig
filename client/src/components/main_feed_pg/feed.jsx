@@ -18,11 +18,11 @@ class OneFeed extends React.Component {
 			newComment: ''
 		}
 		this.getLikesOnPost();
-		// this.loadComments(this.props.post);
+		this.loadComments(this.props.post);
 	}
 
 	componentDidMount() {
-		this.loadComments(this.props.post);
+		// this.loadComments(this.props.post);
 		this.checkIfLike();
 	}
 
